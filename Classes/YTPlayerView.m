@@ -238,7 +238,7 @@ NSString static *const kYTPlayerSyndicationRegexPattern = @"^https://tpc.googles
 
 //MARK: 新建func
 
-- (BOOL)loadPlaylistByVideos:(NSArray *)videoIds
+- (void)loadPlaylistByVideos:(NSArray *)videoIds
                        index:(int)index
                 startSeconds:(float)startSeconds
 playerVars:(nullable NSDictionary *)playerVars{
@@ -255,11 +255,15 @@ playerVars:(nullable NSDictionary *)playerVars{
     NSLog(@"看一下id有什麼 %@", [self stringFromVideoIdArray:videoIds]);
     NSLog(@"看一下PAra %@", tempPlayerVars);
 
+    [self loadPlaylist:[self stringFromVideoIdArray:videoIds]
+                   index:index
+            startSeconds:startSeconds];
+    
 //      return [self loadWithPlayerParams:playerParams];
 //    PLyqTH67_55o9S8RcxDweP461r-Blzf2GW
 //    [self stringFromVideoIdArray:videoIds]
    
-    return [self loadWithPlayerParams:playerParams];
+//    return [self loadWithPlayerParams:playerParams];
     
 //    return [self loadWithPlaylistId:@"PLqpXi64f6ul2Nzd5hHdHS4XuWa7ix8Rm-"];
     
@@ -767,6 +771,9 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
 
   [playerParams setValue:playerCallbacks forKey:@"events"];
   
+    
+    
+    
   NSMutableDictionary *playerVars = [[playerParams objectForKey:@"playerVars"] mutableCopy];
   if (!playerVars) {
     // playerVars must not be empty so we can render a '{}' in the output JSON

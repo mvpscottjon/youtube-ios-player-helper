@@ -462,7 +462,7 @@ typedef void (^YTPlaybackQualityCompletionHandler)(YTPlaybackQuality result,
 
 
 //MARK: 新建func
-- (BOOL)loadPlaylistByVideos:(nonnull NSArray *)videoIds
+- (void)loadPlaylistByVideos:(nonnull NSArray *)videoIds
        index:(int)index
 startSeconds:(float)startSeconds
 playerVars:(nullable NSDictionary *)playerVars;
