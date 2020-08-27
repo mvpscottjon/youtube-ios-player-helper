@@ -457,6 +457,19 @@ typedef void (^YTPlaybackQualityCompletionHandler)(YTPlaybackQuality result,
                        index:(int)index
                 startSeconds:(float)startSeconds;
 
+
+
+
+
+//MARK: 新建func
+- (BOOL)loadPlaylistByVideos:(nonnull NSArray *)videoIds
+       index:(int)index
+startSeconds:(float)startSeconds
+playerVars:(nullable NSDictionary *)playerVars;
+
+
+
+
 #pragma mark - Playing a video in a playlist
 
 // These methods correspond to the JavaScript API as defined under the

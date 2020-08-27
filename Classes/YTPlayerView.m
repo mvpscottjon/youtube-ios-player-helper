@@ -235,6 +235,58 @@ NSString static *const kYTPlayerSyndicationRegexPattern = @"^https://tpc.googles
           startSeconds:startSeconds];
 }
 
+
+//MARK: 新建func
+
+- (BOOL)loadPlaylistByVideos:(NSArray *)videoIds
+                       index:(int)index
+                startSeconds:(float)startSeconds
+playerVars:(nullable NSDictionary *)playerVars{
+    
+      // Mutable copy because we may have been passed an immutable config dictionary.
+      NSMutableDictionary *tempPlayerVars = [[NSMutableDictionary alloc] init];
+      [tempPlayerVars setValue:@"playlist" forKey:@"listType"];
+      [tempPlayerVars setValue:@"PLyqTH67_55o9S8RcxDweP461r-Blzf2GW" forKey:@"list"];
+      if (playerVars) {
+        [tempPlayerVars addEntriesFromDictionary:playerVars];
+      }
+    
+      NSDictionary *playerParams = @{ @"playerVars" : tempPlayerVars };
+    NSLog(@"看一下id有什麼 %@", [self stringFromVideoIdArray:videoIds]);
+    NSLog(@"看一下PAra %@", tempPlayerVars);
+
+//      return [self loadWithPlayerParams:playerParams];
+//    PLyqTH67_55o9S8RcxDweP461r-Blzf2GW
+//    [self stringFromVideoIdArray:videoIds]
+   
+//    return [self loadWithPlayerParams:playerParams];
+    
+    return [self loadWithPlaylistId:@"PLqpXi64f6ul2Nzd5hHdHS4XuWa7ix8Rm-"];
+    
+//    return [self loadWithVideoId:@"PLyqTH67_55o9S8RcxDweP461r-Blzf2GW" playerVars:playerVars];
+    
+    
+    
+//     return [self loadWithPlaylistId:@"PLyqTH67_55o9S8RcxDweP461r-Blzf2GW" playerVars:playerVars];
+
+//    [self loadPlaylist:[self stringFromVideoIdArray:videoIds]
+//                    index:index
+//             startSeconds:startSeconds];
+//  [self loadPlaylist:[self stringFromVideoIdArray:videoIds]
+//                 index:index
+//          startSeconds:startSeconds];
+    
+//    NSNumber *indexValue = [NSNumber numberWithInt:index];
+//    NSNumber *startSecondsValue = [NSNumber numberWithFloat:startSeconds];
+//    NSString *command = [NSString stringWithFormat:@"player.loadPlaylist(%@, %@, %@);",
+//        cueingString, indexValue, startSecondsValue];
+//    [self evaluateJavaScript:command];
+    
+    
+}
+
+
+
 #pragma mark - Setting the playback rate
 
 - (void)playbackRate:(_Nullable YTFloatCompletionHandler)completionHandler {
