@@ -247,6 +247,8 @@ playerVars:(nullable NSDictionary *)playerVars{
       NSMutableDictionary *tempPlayerVars = [[NSMutableDictionary alloc] init];
       [tempPlayerVars setValue:@"playlist" forKey:@"listType"];
       [tempPlayerVars setValue:[self stringFromVideoIdArray:videoIds] forKey:@"list"];
+    [tempPlayerVars setValue:@"1" forKey:@"playsinline"];
+
       if (playerVars) {
         [tempPlayerVars addEntriesFromDictionary:playerVars];
       }
@@ -258,6 +260,11 @@ playerVars:(nullable NSDictionary *)playerVars{
     [self loadPlaylist:[self stringFromVideoIdArray:videoIds]
                    index:index
             startSeconds:startSeconds];
+    
+    [self loadPlaylist: @"PLyqTH67_55o9S8RcxDweP461r-Blzf2GW"
+                    index:index
+             startSeconds:startSeconds];
+    
     
 //      return [self loadWithPlayerParams:playerParams];
 //    PLyqTH67_55o9S8RcxDweP461r-Blzf2GW

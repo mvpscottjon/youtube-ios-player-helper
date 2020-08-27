@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A696EA324F7708500E6F102 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A696EA224F7708500E6F102 /* PlayerVC.swift */; };
 		B3C76A271B975ADB00F375B4 /* YTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C76A251B975ADB00F375B4 /* YTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3C76A281B975ADB00F375B4 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C76A261B975ADB00F375B4 /* YTPlayerView.m */; };
 		B3C76A2F1B975C0100F375B4 /* YouTubeiOSPlayerHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C76A2D1B975BD500F375B4 /* YouTubeiOSPlayerHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A696EA224F7708500E6F102 /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		B3C76A1A1B975AA700F375B4 /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YouTubeiOSPlayerHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C76A1F1B975AA700F375B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C76A251B975ADB00F375B4 /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = Classes/YTPlayerView.h; sourceTree = SOURCE_ROOT; };
@@ -33,6 +35,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A696EA124F7706500E6F102 /* example */ = {
+			isa = PBXGroup;
+			children = (
+				9A696EA224F7708500E6F102 /* PlayerVC.swift */,
+			);
+			path = example;
+			sourceTree = "<group>";
+		};
 		B3C76A101B975AA700F375B4 = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +62,7 @@
 		B3C76A1C1B975AA700F375B4 /* youtube-ios-player-helper */ = {
 			isa = PBXGroup;
 			children = (
+				9A696EA124F7706500E6F102 /* example */,
 				B3C76A321B9765D700F375B4 /* Assets.bundle */,
 				B3C76A251B975ADB00F375B4 /* YTPlayerView.h */,
 				B3C76A261B975ADB00F375B4 /* YTPlayerView.m */,
@@ -105,6 +116,7 @@
 				TargetAttributes = {
 					B3C76A191B975AA700F375B4 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -143,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C76A281B975ADB00F375B4 /* YTPlayerView.m in Sources */,
+				9A696EA324F7708500E6F102 /* PlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +253,7 @@
 		B3C76A231B975AA700F375B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -250,12 +264,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.youtube.youtube-ios-player-helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		B3C76A241B975AA700F375B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -266,6 +283,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.youtube.youtube-ios-player-helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
