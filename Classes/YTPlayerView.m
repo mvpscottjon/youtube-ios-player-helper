@@ -246,7 +246,7 @@ playerVars:(nullable NSDictionary *)playerVars{
       // Mutable copy because we may have been passed an immutable config dictionary.
       NSMutableDictionary *tempPlayerVars = [[NSMutableDictionary alloc] init];
       [tempPlayerVars setValue:@"playlist" forKey:@"listType"];
-      [tempPlayerVars setValue:@"PLyqTH67_55o9S8RcxDweP461r-Blzf2GW" forKey:@"list"];
+      [tempPlayerVars setValue:[self stringFromVideoIdArray:videoIds] forKey:@"list"];
       if (playerVars) {
         [tempPlayerVars addEntriesFromDictionary:playerVars];
       }
@@ -259,9 +259,9 @@ playerVars:(nullable NSDictionary *)playerVars{
 //    PLyqTH67_55o9S8RcxDweP461r-Blzf2GW
 //    [self stringFromVideoIdArray:videoIds]
    
-//    return [self loadWithPlayerParams:playerParams];
+    return [self loadWithPlayerParams:playerParams];
     
-    return [self loadWithPlaylistId:@"PLqpXi64f6ul2Nzd5hHdHS4XuWa7ix8Rm-"];
+//    return [self loadWithPlaylistId:@"PLqpXi64f6ul2Nzd5hHdHS4XuWa7ix8Rm-"];
     
 //    return [self loadWithVideoId:@"PLyqTH67_55o9S8RcxDweP461r-Blzf2GW" playerVars:playerVars];
     
